@@ -30,6 +30,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
+algolia:
+   application_id: TI3NVUH0CA
+   index_name: jekyll
+   search_only_api_key: 46631730a221fc855af5dbff0fdf1ae9
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
