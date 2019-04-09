@@ -1,81 +1,94 @@
 ---
 layout: default
+
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  <div class="home">
 
-  {{ content }}
+    {{ content }}
+    <!-- {% assign default_paths = site.pages | map: "path" %}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {{ site.pages }} -->
 
-  <!-- {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
+    <!-- {% for page in site.pages %}
+      {{ page.path }} <br>
+    {% endfor %} -->
+
+    {%- if site.posts.size > 0 -%}
+      <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+      <ul class="post-list">
+        {%- for post in site.posts -%}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          <!-- {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%} -->
           {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+        </li>
+        {%- endfor -%}
+      </ul>
 
-  {%- endif -%} -->
-  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
-  <!-- <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    {%- endif -%}
+    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
+    <!-- <div class="card mb-3 bg-light">
+      <div class="card-header">
+        <a class="text-decoration-none text-secondary font-weight-bold" href="#">
+          이건 고양이입니다.
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="row text-truncate">
+          <a class="font-weight-normal text-decoration-none text-body" href="#">
+            <p class="card-text col">
+              정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다.
+              정말입니다. 이건 고양이
+            </p>
+          </a>
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="card mb-3 bg-light">
+      <div class="card-header">
+        <a class="text-decoration-none text-secondary font-weight-bold" href="#">
+          이건 고양이입니다.
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <p class="card-text col">
+            <a class="font-weight-normal text-decoration-none text-body" href="#">
+              정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다.
+            </a>
+          </p>
         </div>
       </div>
-    </div>
-  </div> -->
-  <!-- <input type="text" id="search-input" placeholder="Search Actors..." /> -->
+    </div> -->
+    <!-- <input type="text" id="search-input" placeholder="Search Actors..." /> -->
 
-  <!-- js -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/3.32.0/algoliasearchLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.35.0/autocomplete.min.js"></script>
-  <!-- <script>
-    var client = algoliasearch('TI3NVUH0CA', '46631730a221fc855af5dbff0fdf1ae9');
-    var index = client.initIndex('jekyll');
-    autocomplete('#search-input', { hint: false }, [
-      {
-        source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
-        displayKey: 'my_attribute',
-        templates: {
-          suggestion: function(suggestion) {
-            //console.log(suggestion);
-            console.log(suggestion);
-            //return suggestion._highlightResult.my_attribute.value;
-            return suggestion._highlightResult.title.value;
+    <!-- <script>
+      var client = algoliasearch('TI3NVUH0CA', '46631730a221fc855af5dbff0fdf1ae9');
+      var index = client.initIndex('jekyll');
+      autocomplete('#search-input', { hint: false }, [
+        {
+          source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+          displayKey: 'my_attribute',
+          templates: {
+            suggestion: function(suggestion) {
+              //console.log(suggestion);
+              console.log(suggestion);
+              //return suggestion._highlightResult.my_attribute.value;
+              return suggestion._highlightResult.title.value;
+            }
           }
         }
-      }
-    ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
-      console.log(event, suggestion, dataset, context);
-    });
-  </script> -->
-</div>
+      ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
+        console.log(event, suggestion, dataset, context);
+      });
+    </script> -->
+  </div>
