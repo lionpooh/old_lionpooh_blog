@@ -5,8 +5,8 @@ date: 2019-06-18 08:14:25 +0900
 categories: [Openstack]
 tags: [Openstack, Neutron]
 ---
-Openstack Networking service - neutron은 cloud networking을 API를 통해서 정의, 제곻한다. 
-<!--more-->
+Openstack Networking service - neutron은 openstack networking을 API를 통해서 정의, 제공한다. openstack에서 networking이란 openstack compute service (nova) 에서 사용하는 virtual networking infrastructure 들, networks, switches, subnets, routers등을 생성, 관리 (creation and management) 를 의미한다. 
+<!--more-->  
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
 Jekyll also offers powerful support for code snippets:
