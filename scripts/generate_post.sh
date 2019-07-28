@@ -1,4 +1,5 @@
 #!/bin/bash
+
 CATEGORY=$1
 FILENAME=$2
 POSTFILENAMEDATE="$(date "+%Y-%m-%d")"

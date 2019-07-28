@@ -2,8 +2,8 @@
 layout: post
 title: Neutron Networking overview
 date: 2019-06-18 08:14:25 +0900
-categories: [Openstack]
-tags: [Openstack, Neutron]
+categories: [openstack]
+tags: [openstack, neutron]
 ---
 Openstack Networking service [neutron]은 Openstack Networking을 API를 통해서 정의, 제공하며 Openstack Compute service [nova] 에서 사용하는 virtual networking infrastructure (networks, switches, subnets, routers) 의 생성, 관리를 (creation and management) 한다.
 <!--more-->
