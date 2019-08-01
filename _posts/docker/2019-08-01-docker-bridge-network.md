@@ -47,5 +47,9 @@ docker는 기본적으로 default bridge network (`bridge`) 를 만들어 놓고
   - `docker-compose`를 사용하여 여러 container를 동시에 시작할때 compose file 이란 것을 이용해서 공유 변수를 정의
 
   - docker 단독으로 container를 사용하는 것이 아니라, swarm 서비스를 이용해서 secret과 config들을 공유 가능하다.
-  
-### **User defined bridge 직접 생성해보기**
+
+### **참조 링크**
+- [docker document - Use bridge networks][docker-bridge]
+  - 위의 내용을 번역
+
+[docker-bridge]: https://docs.docker.com/network/bridge/
