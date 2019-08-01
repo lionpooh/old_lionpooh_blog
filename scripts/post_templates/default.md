@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  welcome to jekyll
-date: 2019-07-28 07:06:04 +0900
+date: 2019-08-01 05:23:27 +0900
 categories: [Jekyll]
 tags: [ruby, jekyll]
 ---
