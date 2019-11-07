@@ -1,94 +1,34 @@
 ---
 layout: default
-
 ---
 
-  <div class="home">
+<div class="home">
 
-    {{ content }}
-    <!-- {% assign default_paths = site.pages | map: "path" %}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    {{ site.pages }} -->
+  {{ content }}
 
-    <!-- {% for page in site.pages %}
-      {{ page.path }} <br>
-    {% endfor %} -->
+  <h1 class="page-heading">Posts</h1>
 
-    {%- if site.posts.size > 0 -%}
-      <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-      <ul class="post-list">
-        {%- for post in site.posts -%}
-        <li>
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          <!-- {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%} -->
-          {{ post.excerpt }}
-        </li>
-        {%- endfor -%}
-      </ul>
+  <div id="search-searchbar"></div>
 
-    {%- endif -%}
-    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
-    <!-- <div class="card mb-3 bg-light">
-      <div class="card-header">
-        <a class="text-decoration-none text-secondary font-weight-bold" href="#">
-          이건 고양이입니다.
-        </a>
-      </div>
-      <div class="card-body">
-        <div class="row text-truncate">
-          <a class="font-weight-normal text-decoration-none text-body" href="#">
-            <p class="card-text col">
-              정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다.
-              정말입니다. 이건 고양이
-            </p>
+  <div class="post-list" id="search-hits">
+    {% for post in site.posts %}
+      <div class="post-item">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
           </a>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3 bg-light">
-      <div class="card-header">
-        <a class="text-decoration-none text-secondary font-weight-bold" href="#">
-          이건 고양이입니다.
-        </a>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <p class="card-text col">
-            <a class="font-weight-normal text-decoration-none text-body" href="#">
-              정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다. 정말입니다. 이건 고양이입니다.
-            </a>
-          </p>
-        </div>
-      </div>
-    </div> -->
-    <!-- <input type="text" id="search-input" placeholder="Search Actors..." /> -->
+        </h2>
 
-    <!-- <script>
-      var client = algoliasearch('TI3NVUH0CA', '46631730a221fc855af5dbff0fdf1ae9');
-      var index = client.initIndex('jekyll');
-      autocomplete('#search-input', { hint: false }, [
-        {
-          source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
-          displayKey: 'my_attribute',
-          templates: {
-            suggestion: function(suggestion) {
-              //console.log(suggestion);
-              console.log(suggestion);
-              //return suggestion._highlightResult.my_attribute.value;
-              return suggestion._highlightResult.title.value;
-            }
-          }
-        }
-      ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
-        console.log(event, suggestion, dataset, context);
-      });
-    </script> -->
+        <div class="post-snippet">{{ post.excerpt }}</div>
+      </div>
+    {% endfor %}
   </div>
+
+  {% include algolia.html %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
+
+</div>
