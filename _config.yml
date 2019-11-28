@@ -41,6 +41,7 @@ algolia:
   files_to_exclude:
     - about.markdown
     - index.markdown
+    - tags.html
 
 # Exclude from processing.
 # The following items will not be processed, by default.

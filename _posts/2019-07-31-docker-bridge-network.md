@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Docker bridge network
-date: 2019-08-01 05:23:27 +0900
+date: 2019-07-31
 categories: [docker]
 tags: [docker]
 ---
@@ -10,7 +10,7 @@ tags: [docker]
 
 bridge network는 같은 docker daemon host의 container에 적용되며, 다른 docker daemon host에 있는 container에 접근하려면, OS 레벨에서 routing을 건들거나, `docker overlay network`를 이용해야한다.
 
-docker는 기본적으로 default bridge network (`bridge`) 를 만들어 놓고 사용하고 있으며, container를 만들때 network를 지정하지 않으면 `bridge`에 연결이 된다. 또한 bridge network는 직접 만들어서 사용할 수 있고, 생성된 bridge network (직접 생성한) 는 default `bridge` network보다 더 높은 우선권을 가지게 된다.
+docker는 기본적으로 default bridge network (bridge) 를 만들어 놓고 사용하고 있으며, container를 만들때 network를 지정하지 않으면 bridge에 연결이 된다. 또한 bridge network는 직접 만들어서 사용할 수 있고, 생성된 bridge network (직접 생성한) 는 default bridge network보다 더 높은 우선권을 가지게 된다.
 
 ### **User-defined bridge network와 default bridge network의 차이점**
 - **User-defined (사용자 정의) bridge는 containerized application간에 더 나은 격리와 상호 운영성을 제공해준다.**  

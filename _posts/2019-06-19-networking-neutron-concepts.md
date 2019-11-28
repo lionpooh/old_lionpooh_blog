@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Networking neutron concepts
-date: 2019-06-19 05:12:08 +0900
+date: 2019-06-19
 categories: [openstack]
 tags: [openstack, neutron]
 ---
