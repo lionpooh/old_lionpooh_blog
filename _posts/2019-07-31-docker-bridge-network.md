@@ -13,6 +13,7 @@ bridge network는 같은 docker daemon host의 container에 적용되며, 다른
 docker는 기본적으로 default bridge network (bridge) 를 만들어 놓고 사용하고 있으며, container를 만들때 network를 지정하지 않으면 bridge에 연결이 된다. 또한 bridge network는 직접 만들어서 사용할 수 있고, 생성된 bridge network (직접 생성한) 는 default bridge network보다 더 높은 우선권을 가지게 된다.
 
 ### **User-defined bridge network와 default bridge network의 차이점**
+
 - **User-defined (사용자 정의) bridge는 containerized application간에 더 나은 격리와 상호 운영성을 제공해준다.**  
 
   같은 user-defined bridge network에 연결되어 있는 container는 자동으로 서로 모든 port를 열어두며, network 외부로의 port연결은 막아둔다. 이로인해 containerized application들은 외부와의 연결은 차단하고, 내부의 연결은 별도의 설정없이 연결이 가능해진다.

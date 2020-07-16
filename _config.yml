@@ -21,7 +21,7 @@
 title: tech blog
 email: lionpooh37@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- 개인적인 기술 블로그입니다. 피드백이나 문의는 이메일로 주세요
+        #  개인적인 기술 블로그입니다. 피드백이나 문의는 이메일로 주세요
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
@@ -30,7 +30,7 @@ github_username:  lionpooh
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+- jekyll-feed
 
 excerpt_separator: <!--more-->
 
@@ -39,9 +39,9 @@ algolia:
   index_name: dev_blog
   search_only_api_key: a77d43279ca2b3b97bbdbdcbba844697
   files_to_exclude:
-    - about.markdown
-    - index.markdown
-    - tags.html
+  - about.markdown
+  - index.markdown
+  - tags.html
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -52,14 +52,14 @@ algolia:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - scripts
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+- scripts
+- .sass-cache/
+- .jekyll-cache/
+- gemfiles/
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
