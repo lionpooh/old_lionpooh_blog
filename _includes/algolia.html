@@ -24,7 +24,7 @@
 
         let breadcrumbs = '';
         if (hit._highlightResult.headings) {
-            breadcrumbs = hit._highlightResult.headings.map(match = > {
+            breadcrumbs = hit._highlightResult.headings.map(match => {
                 return `<span class="post-breadcrumb">${match.value}</span>`
             }
         ).
